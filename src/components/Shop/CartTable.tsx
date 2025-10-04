@@ -87,7 +87,7 @@ if (data && data.length === 0) {
       data-aos-duration="1000"
       data-aos-delay="600"
       data-aos-content="center"
-  >
+    >
     <h2>Giỏ hàng trống</h2>
     <p>
     đến cửa hàng của chúng tôi 

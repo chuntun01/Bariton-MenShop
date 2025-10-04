@@ -32,7 +32,7 @@ export const deleteSanPhamToCart = async (cartid: number ) => {
         console.error('Xóa không thành công', response.data);
       }
   } catch (e) {
-    console.error(e);
+    console.error("lỗi chỗ nào rồi thằng ml",e);
   }
 };
 

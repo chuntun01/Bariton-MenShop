@@ -26,7 +26,7 @@ export default async function handler(
       if (!productId || !quantity || !productSize) {
         return res
           .status(400)
-          .json({ error: "Thiếu id sản phẩm, số lượng hoặc size" });
+          .json({ error: "Thiếu số lượng hoặc size" });
       }
 
       const result = await dbConnect.query<ICartItem>(

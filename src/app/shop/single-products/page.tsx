@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import NavbarTwo from '../../../components/Layouts/Navbar';
-import PageBanner from '../../../components/Common/PageBanner';
-import SingleProductsContent from '../../../components/Shop/SingleProductsContent';
-import Footer from '../../../components/Layouts/Footer';
-import { ISanPham } from '../../../components/Shop/SingleProductsContent';
-import axios from 'axios';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import NavbarTwo from "../../../components/Layouts/Navbar";
+import PageBanner from "../../../components/Common/PageBanner";
+import SingleProductsContent from "../../../components/Shop/SingleProductsContent";
+import Footer from "../../../components/Layouts/Footer";
+import { ISanPham } from "../../../components/Shop/SingleProductsContent";
+import axios from "axios";
 
 const SingleProducts = ({ params }: { params: { id: string } }) => {
   const [data, setData] = useState<ISanPham | null>(null);
@@ -15,7 +17,7 @@ const SingleProducts = ({ params }: { params: { id: string } }) => {
         const response = await axios.get<ISanPham>(`/api/sanpham/${params.id}`);
         setData(response.data);
       } catch (e) {
-        console.error('Error fetching product:', e);
+        console.error("Error fetching product:", e);
       }
     };
 
@@ -24,22 +26,18 @@ const SingleProducts = ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-    
       <NavbarTwo />
 
       <PageBanner
-
-        pageTitle='Single Products'
-        homePageUrl='/'
-        homePageText='Home'
-        activePageText='Single Products'
-        bgImg='/images/page-title-bg1.jpg'
+        pageTitle="Single Products"
+        homePageUrl="/"
+        homePageText="Home"
+        activePageText="Single Products"
+        bgImg="/images/page-title-bg1.jpg"
       />
 
-      {data && (
-        <SingleProductsContent sanPham={data} />
-      )}
-      
+      {data && <SingleProductsContent sanPham={data} />}
+
       <Footer />
     </>
   );
